@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Party Personality Quiz</title>
+<link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+<div class="page">
+<div class="header">
+    <h1>🎉 Party Personality Quiz</h1>
+    <p>Discover your party vibe</p>
+</div>
+
+<!-- Q1 -->
+<div class="question" id="q1">
+<h2>Big party or small hangout?</h2>
+<label class="option"><input type="radio"> Big party</label>
+<label class="option"><input type="radio"> Small hangout</label>
+<label class="option"><input type="radio"> Both</label>
+<label class="option"><input type="radio"> Neither</label>
+<a class="next" href="#q2">Next</a>
+</div>
+
+<!-- Q2 -->
+<div class="question" id="q2">
+<h2>Dance or talk?</h2>
+<label class="option"><input type="radio"> Dance</label>
+<label class="option"><input type="radio"> Talk</label>
+<label class="option"><input type="radio"> Both</label>
+<label class="option"><input type="radio"> Neither</label>
+<a class="next" href="#q3">Next</a>
+</div>
+
+<!-- Q3 -->
+<div class="question" id="q3">
+<h2>Favorite party drink?</h2>
+<label class="option"><input type="radio"> Soda</label>
+<label class="option"><input type="radio"> Juice</label>
+<label class="option"><input type="radio"> Mocktail</label>
+<label class="option"><input type="radio"> Water</label>
+<a class="next" href="#q4">Next</a>
+</div>
+
+<!-- Q4 -->
+<div class="question" id="q4">
+<h2>Music volume preference?</h2>
+<label class="option"><input type="radio"> Loud</label>
+<label class="option"><input type="radio"> Medium</label>
+<label class="option"><input type="radio"> Soft</label>
+<label class="option"><input type="radio"> Any</label>
+<a class="next" href="#q5">Next</a>
+</div>
+
+<!-- Q5 -->
+<div class="question" id="q5">
+<h2>Outfit style?</h2>
+<label class="option"><input type="radio"> Casual</label>
+<label class="option"><input type="radio"> Trendy</label>
+<label class="option"><input type="radio"> Fancy</label>
+<label class="option"><input type="radio"> Crazy</label>
+<a class="next" href="#q6">Next</a>
+</div>
+
+<!-- Q6 -->
+<div class="question" id="q6">
+<h2>Arrive at party?</h2>
+<label class="option"><input type="radio"> Early</label>
+<label class="option"><input type="radio"> On time</label>
+<label class="option"><input type="radio"> Late</label>
+<label class="option"><input type="radio"> Never</label>
+<a class="next" href="#q7">Next</a>
+</div>
+
+<!-- Q7 -->
+<div class="question" id="q7">
+<h2>Party games?</h2>
+<label class="option"><input type="radio"> Love them</label>
+<label class="option"><input type="radio"> Hate them</label>
+<label class="option"><input type="radio"> Sometimes</label>
+<label class="option"><input type="radio"> Depends</label>
+<a class="next" href="#q8">Next</a>
+</div>
+
+<!-- Q8 -->
+<div class="question" id="q8">
+<h2>Indoor or outdoor party?</h2>
+<label class="option"><input type="radio"> Indoor</label>
+<label class="option"><input type="radio"> Outdoor</label>
+<label class="option"><input type="radio"> Both</label>
+<label class="option"><input type="radio"> None</label>
+<a class="next" href="#q9">Next</a>
+</div>
+
+<!-- Q9 -->
+<div class="question" id="q9">
+<h2>Host or guest?</h2>
+<label class="option"><input type="radio"> Host</label>
+<label class="option"><input type="radio"> Guest</label>
+<label class="option"><input type="radio"> Both</label>
+<label class="option"><input type="radio"> Neither</label>
+<a class="next" href="#q10">Next</a>
+</div>
+
+<!-- Q10 -->
+<div class="question" id="q10">
+<h2>After party plan?</h2>
+<label class="option"><input type="radio"> Sleep</label>
+<label class="option"><input type="radio"> Food</label>
+<label class="option"><input type="radio"> Hangout</label>
+<label class="option"><input type="radio"> Go home</label>
+<a class="next" href="result.html">Finish</a>
+</div>
+
+</div>
+<script>
+const questions = document.querySelectorAll(".question");
+const nextButtons = document.querySelectorAll(".next");
+const progressText = document.querySelector(".progress-text span:first-child");
+const progressPercent = document.querySelector(".progress-text span:last-child");
+const progressFill = document.querySelector(".fill");
+
+let current = 0;
+
+// Hide all except first
+questions.forEach((q, index) => {
+    if (index !== 0) q.style.display = "none";
+});
+
+// Handle Next clicks
+nextButtons.forEach((btn, index) => {
+    btn.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        questions[current].style.display = "none";
+        current++;
+
+        if (current < questions.length) {
+            questions[current].style.display = "block";
+
+            const percent = Math.round(((current + 1) / questions.length) * 100);
+            progressText.innerText = `Question ${current + 1} of ${questions.length}`;
+            progressPercent.innerText = `${percent}% Complete`;
+            progressFill.style.width = percent + "%";
+        } 
+        else {
+            window.location.href = "result.html";
+        }
+    });
+});
+</script>
+</body>
+</html>

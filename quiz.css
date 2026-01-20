@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #ecfffa;
+}
+
+.page {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(135deg, #06b6a0, #0ea5a4);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* PROGRESS */
+.progress-card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px 22px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    margin-bottom: 30px;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e5f3ef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.fill {
+    width: 10%;
+    height: 100%;
+    background: #10b981;
+}
+
+/* QUESTION CARD */
+.question {
+    display: none;
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 8px 18px rgba(0,0,0,.08);
+}
+
+/* Show selected question */
+.question:target {
+    display: block;
+}
+
+/* Default Question 1 */
+#q1 {
+    display: block;
+}
+
+.tag {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.question h2 {
+    margin: 15px 0 20px;
+}
+
+/* OPTIONS */
+.option {
+    display: block;
+    border: 1px solid #e5e7eb;
+    padding: 14px 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.option:hover {
+    background: #ecfdf5;
+    border-color: #10b981;
+}
+
+/* BUTTON */
+.next {
+    display: inline-block;
+    margin-top: 18px;
+    background: #10b981;
+    color: white;
+    padding: 12px 26px;
+    border-radius: 25px;
+    text-decoration: none;
+    float: right;
+}

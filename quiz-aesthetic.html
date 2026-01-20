@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aesthetic Quiz</title>
+<link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+    <h1>What's Your Aesthetic Vibe?</h1>
+    <p>Discover your unique personality style</p>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-card">
+    <div class="progress-text">
+        <span>Question 1 of 10</span>
+        <span>10% Complete</span>
+    </div>
+    <div class="progress-bar">
+        <div class="fill"></div>
+    </div>
+</div>
+
+<!-- QUESTIONS -->
+
+<!-- Q1 -->
+<section id="q1" class="question active">
+    <span class="tag">Lifestyle</span>
+    <h2>What's your ideal weekend activity?</h2>
+
+    <label class="option">📺 Staying home and binge-watching</label>
+    <label class="option">🏙 Going out to explore the city</label>
+    <label class="option">🎨 Creative hobby or project</label>
+    <label class="option">🌿 Relaxing in nature</label>
+
+    <a href="#q2" class="next">Next Question →</a>
+</section>
+
+<!-- Q2 -->
+<section id="q2" class="question">
+    <span class="tag">Style</span>
+    <h2>Your favorite color palette?</h2>
+
+    <label class="option">🌸 Pastels</label>
+    <label class="option">⚪ Neutrals</label>
+    <label class="option">🌿 Earthy</label>
+    <label class="option">🖤 Dark</label>
+
+    <a href="#q3" class="next">Next Question →</a>
+</section>
+
+<!-- Q3 -->
+<section id="q3" class="question">
+    <span class="tag">Mood</span>
+    <h2>Which vibe matches you best?</h2>
+
+    <label class="option">😌 Calm</label>
+    <label class="option">✨ Creative</label>
+    <label class="option">⚡ Energetic</label>
+    <label class="option">🌙 Chill</label>
+
+    <a href="#q4" class="next">Next Question →</a>
+</section>
+
+<!-- Q4 -->
+<section id="q4" class="question">
+    <span class="tag">Space</span>
+    <h2>Dream room style?</h2>
+
+    <label class="option">🪴 Minimal</label>
+    <label class="option">🛋 Cozy</label>
+    <label class="option">🎨 Artistic</label>
+    <label class="option">🏙 Modern</label>
+
+    <a href="#q5" class="next">Next Question →</a>
+</section>
+
+<!-- Q5 -->
+<section id="q5" class="question">
+    <span class="tag">Music</span>
+    <h2>Favorite music mood?</h2>
+
+    <label class="option">🎧 Lo-fi</label>
+    <label class="option">🎸 Indie</label>
+    <label class="option">🎤 Pop</label>
+    <label class="option">🎷 Jazz</label>
+
+    <a href="#q6" class="next">Next Question →</a>
+</section>
+
+<!-- Q6 -->
+<section id="q6" class="question">
+    <span class="tag">Scent</span>
+    <h2>Favorite scent?</h2>
+
+    <label class="option">🌼 Floral</label>
+    <label class="option">☕ Coffee</label>
+    <label class="option">🌿 Herbal</label>
+    <label class="option">🍋 Citrus</label>
+
+    <a href="#q7" class="next">Next Question →</a>
+</section>
+
+<!-- Q7 -->
+<section id="q7" class="question">
+    <span class="tag">Work</span>
+    <h2>Ideal workspace?</h2>
+
+    <label class="option">🏡 Home</label>
+    <label class="option">☕ Cafe</label>
+    <label class="option">📚 Library</label>
+    <label class="option">🌳 Outdoors</label>
+
+    <a href="#q8" class="next">Next Question →</a>
+</section>
+
+<!-- Q8 -->
+<section id="q8" class="question">
+    <span class="tag">Season</span>
+    <h2>Favorite season?</h2>
+
+    <label class="option">🌸 Spring</label>
+    <label class="option">☀ Summer</label>
+    <label class="option">🍂 Autumn</label>
+    <label class="option">❄ Winter</label>
+
+    <a href="#q9" class="next">Next Question →</a>
+</section>
+
+<!-- Q9 -->
+<section id="q9" class="question">
+    <span class="tag">Light</span>
+    <h2>Preferred lighting?</h2>
+
+    <label class="option">💡 Warm</label>
+    <label class="option">🌤 Natural</label>
+    <label class="option">💎 Cool</label>
+    <label class="option">🌈 Neon</label>
+
+    <a href="#q10" class="next">Next Question →</a>
+</section>
+
+<!-- Q10 -->
+<section id="q10" class="question">
+    <span class="tag">Energy</span>
+    <h2>Calm or energetic?</h2>
+
+    <label class="option">😌 Calm</label>
+    <label class="option">⚖ Balanced</label>
+    <label class="option">🔥 Energetic</label>
+    <label class="option">🎯 Depends</label>
+
+    <a href="result.html" class="next">Finish Quiz →</a>
+
+</section>
+
+</div>
+<script>
+const questions = document.querySelectorAll(".question");
+const nextButtons = document.querySelectorAll(".next");
+const progressText = document.querySelector(".progress-text span:first-child");
+const progressPercent = document.querySelector(".progress-text span:last-child");
+const progressFill = document.querySelector(".fill");
+
+let current = 0;
+
+// Hide all except first question
+questions.forEach((q, i) => {
+    q.style.display = i === 0 ? "block" : "none";
+});
+
+// Handle Next button clicks
+nextButtons.forEach(btn => {
+    btn.addEventListener("click", function (e) {
+        e.preventDefault(); // 🔥 VERY IMPORTANT
+
+        questions[current].style.display = "none";
+        current++;
+
+        if (current < questions.length) {
+            questions[current].style.display = "block";
+
+            const percent = Math.round(((current + 1) / questions.length) * 100);
+            progressText.textContent = `Question ${current + 1} of ${questions.length}`;
+            progressPercent.textContent = `${percent}% Complete`;
+            progressFill.style.width = percent + "%";
+        } else {
+            // Finished quiz
+            window.location.href = "leaderboard and result.html";
+        }
+    });
+});
+</script>
+
+
+
+</body>
+</html>
+

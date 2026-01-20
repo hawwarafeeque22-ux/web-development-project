@@ -1,40 +1,107 @@
 <!DOCTYPE html>
-<html lang="en"> 
-<head> 
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<title>Home-VibeCheck/title> 
-<link rel="stylesheet" href="style.css"> 
-</head> 
-<body>
- 
-    <!-- Navigation Bar --> 
-<header>
-<!-- Logo Image -->
-<img src="logo.png" alt="Website Logo" class="logo">
- 
-        <h1>My Website</h1> 
-<nav> 
-<ul> 
-<li><a href="homepage.html">Home</a></li> 
-<li><a href="individual quiz.html">individual quiz</a></li> 
-<li><a href="quiz selection.html">quiz selection</li> 
-<li><a href="results and leaderboardpage.html">results and leaderboard</a></li> 
-</ul> 
-</nav> 
-</header>
- 
-    <!-- Homepage Content --> 
-<section> 
-<h1>Take the quiz   
-    pass the vibe</h1>
-<p>Explore fun personality quizzes, discover your vibe, and share results with your friends!</p> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VibeCheck</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+
+<nav class="navbar">
+  <div class="nav-left">
+    <img src="logo.png" alt="VibeCheck Logo" class="logo">
+    <span class="brand-name">VibeCheck</span>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-tag">DISCOVER YOUR TRUE SELF</p>
+  <h1>Take the Quiz.<br><span>Pass the Vibe.</span></h1>
+  <p class="hero-sub">
+    Explore personality quizzes, discover your unique vibe, and share results with friends.
+  </p>
+
+  <button class="primary-btn">Start Exploring →</button>
+
+  <div class="stats">
+    <div>
+      <h3>50K+</h3>
+      <p>Active Users</p>
+    </div>
+    <div>
+      <h3>100+</h3>
+      <p>Fun Quizzes</p>
+    </div>
+    <div>
+      <h3>1M+</h3>
+      <p>Quizzes Taken</p>
+    </div>
+  </div>
 </section>
- 
-    <!-- Footer --> 
-<footer> 
-<p>&copy; 2025 My Website. All Rights Reserved.</p> 
+
+<!-- WHY CHOOSE US -->
+<section class="why">
+  <p class="section-tag">WHY CHOOSE US</p>
+  <h2>Why VibeCheck?</h2>
+  <p class="section-desc">
+    The most engaging quiz platform designed with you in mind
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <h4>🎨 Fun & Creative</h4>
+      <p>Engaging questions designed to reveal your true self.</p>
+    </div>
+    <div class="card">
+      <h4>⚡ Quick & Easy</h4>
+      <p>Get meaningful results in just minutes.</p>
+    </div>
+    <div class="card highlight">
+      <h4>❤️ Share Your Vibe</h4>
+      <p>Share results with friends and compare personalities.</p>
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR QUIZZES -->
+<section class="quiz-grid">
+
+<a href="quiz-aesthetic.html" class="quiz-card">
+  <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36">
+  <h4>What's Your Aesthetic?</h4>
+  <span>5.2K plays</span>
+</a>
+
+<a href="quiz-movie.html" class="quiz-card">
+  <img src="https://images.unsplash.com/photo-1606112219348-204d7d8b94ee">
+  <h4>Which Movie Character Are You?</h4>
+  <span>4.8K plays</span>
+</a>
+
+<a href="quiz-coffee.html" class="quiz-card">
+  <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+  <h4>Your Perfect Coffee Order</h4>
+  <span>6.1K plays</span>
+</a>
+
+<a href="quiz-party.html" class="quiz-card">
+  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+  <h4>What's Your Party Personality?</h4>
+  <span>7.3K plays</span>
+</a>
+
+</section>
+
+<section class="cta">
+  <h2>Ready to Find Your Vibe?</h2>
+  <a href="quiz-aesthetic.html" class="primary-btn">Get Started Now ✨</a>
+</section>
+
+<footer>
+  © 2025 VibeCheck. All Rights Reserved.
 </footer>
- 
-</body> 
+
+</body>
 </html>

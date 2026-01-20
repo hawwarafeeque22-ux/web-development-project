@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Movie Character Quiz</title>
+<link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+<div class="page">
+<div class="header">
+    <h1>🎬 Movie Character Quiz</h1>
+    <p>Which character matches you?</p>
+</div>
+
+<!-- Q1 -->
+<div class="question" id="q1">
+<h2>Favorite movie genre?</h2>
+<label class="option"><input type="radio"> Action</label>
+<label class="option"><input type="radio"> Romance</label>
+<label class="option"><input type="radio"> Comedy</label>
+<label class="option"><input type="radio"> Fantasy</label>
+<a class="next" href="#q2">Next</a>
+</div>
+
+<!-- Q2 -->
+<div class="question" id="q2">
+<h2>Hero or villain?</h2>
+<label class="option"><input type="radio"> Hero</label>
+<label class="option"><input type="radio"> Villain</label>
+<label class="option"><input type="radio"> Both</label>
+<label class="option"><input type="radio"> Neither</label>
+<a class="next" href="#q3">Next</a>
+</div>
+
+<!-- Q3 -->
+<div class="question" id="q3">
+<h2>Choose a superpower</h2>
+<label class="option"><input type="radio"> Flying</label>
+<label class="option"><input type="radio"> Time travel</label>
+<label class="option"><input type="radio"> Super strength</label>
+<label class="option"><input type="radio"> Magic</label>
+<a class="next" href="#q4">Next</a>
+</div>
+
+<!-- Q4 -->
+<div class="question" id="q4">
+<h2>Team or solo?</h2>
+<label class="option"><input type="radio"> Team</label>
+<label class="option"><input type="radio"> Solo</label>
+<label class="option"><input type="radio"> Both</label>
+<label class="option"><input type="radio"> Neither</label>
+<a class="next" href="#q5">Next</a>
+</div>
+
+<!-- Q5 -->
+<div class="question" id="q5">
+<h2>Favorite movie setting?</h2>
+<label class="option"><input type="radio"> City</label>
+<label class="option"><input type="radio"> Space</label>
+<label class="option"><input type="radio"> Forest</label>
+<label class="option"><input type="radio"> Ocean</label>
+<a class="next" href="#q6">Next</a>
+</div>
+
+<!-- Q6 -->
+<div class="question" id="q6">
+<h2>Best personality trait?</h2>
+<label class="option"><input type="radio"> Brave</label>
+<label class="option"><input type="radio"> Smart</label>
+<label class="option"><input type="radio"> Funny</label>
+<label class="option"><input type="radio"> Kind</label>
+<a class="next" href="#q7">Next</a>
+</div>
+
+<!-- Q7 -->
+<div class="question" id="q7">
+<h2>Choose a weapon</h2>
+<label class="option"><input type="radio"> Sword</label>
+<label class="option"><input type="radio"> Technology</label>
+<label class="option"><input type="radio"> Mind power</label>
+<label class="option"><input type="radio"> Magic</label>
+<a class="next" href="#q8">Next</a>
+</div>
+
+<!-- Q8 -->
+<div class="question" id="q8">
+<h2>Leader or follower?</h2>
+<label class="option"><input type="radio"> Leader</label>
+<label class="option"><input type="radio"> Follower</label>
+<label class="option"><input type="radio"> Both</label>
+<label class="option"><input type="radio"> Neither</label>
+<a class="next" href="#q9">Next</a>
+</div>
+
+<!-- Q9 -->
+<div class="question" id="q9">
+<h2>Happy or sad ending?</h2>
+<label class="option"><input type="radio"> Happy</label>
+<label class="option"><input type="radio"> Sad</label>
+<label class="option"><input type="radio"> Both</label>
+<label class="option"><input type="radio"> Any</label>
+<a class="next" href="#q10">Next</a>
+</div>
+
+<!-- Q10 -->
+<div class="question" id="q10">
+<h2>Classic or modern movies?</h2>
+<label class="option"><input type="radio"> Classic</label>
+<label class="option"><input type="radio"> Modern</label>
+<label class="option"><input type="radio"> Both</label>
+<label class="option"><input type="radio"> Any</label>
+<a class="next" href="result.html">Finish</a>
+</div>
+
+</div>
+<script>
+const questions = document.querySelectorAll(".question");
+const nextButtons = document.querySelectorAll(".next");
+const progressText = document.querySelector(".progress-text span:first-child");
+const progressPercent = document.querySelector(".progress-text span:last-child");
+const progressFill = document.querySelector(".fill");
+
+let current = 0;
+
+// Hide all except first
+questions.forEach((q, index) => {
+    if (index !== 0) q.style.display = "none";
+});
+
+// Handle Next clicks
+nextButtons.forEach((btn, index) => {
+    btn.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        questions[current].style.display = "none";
+        current++;
+
+        if (current < questions.length) {
+            questions[current].style.display = "block";
+
+            const percent = Math.round(((current + 1) / questions.length) * 100);
+            progressText.innerText = `Question ${current + 1} of ${questions.length}`;
+            progressPercent.innerText = `${percent}% Complete`;
+            progressFill.style.width = percent + "%";
+        } 
+        else {
+            window.location.href = "result.html";
+        }
+    });
+});
+</script>
+
+</body>
+</html>
