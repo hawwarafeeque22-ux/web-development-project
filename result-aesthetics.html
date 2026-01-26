@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<meta charset="UTF-8"> 
+<title>Your Vibe Result</title> 
+<link rel="stylesheet" href="result.css"> 
+</head>
+
+<body>
+
+<header class="top-bar">
+  <div class="brand">
+    <img src="logo.png" alt="VibeCheck Logo" class="logo">
+    <span class="brand-name">VibeCheck</span>
+  </div>
+</header>
+
+
+<section class="hero">
+  <h1>Your Results Are In!</h1>
+  <p>You’ve completed the quiz 🎉</p>
+</section>
+
+<!-- RESULT CARD -->
+<section class="result-wrapper">
+
+  <div class="result-card">
+    <div class="result-icon">😎</div>
+    <h2 id="vibeName">Loading...</h2>
+    <span class="badge">Aesthetic Type</span>
+  </div>
+
+  <p class="description" id="vibeDesc"></p>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <label>Chill Level <span id="chillVal"></span></label>
+      <div class="bar"><div id="chillBar"></div></div>
+    </div>
+
+    <div class="stat">
+      <label>Energy <span id="energyVal"></span></label>
+      <div class="bar"><div id="energyBar"></div></div>
+    </div>
+
+    <div class="stat">
+      <label>Social Vibe <span id="socialVal"></span></label>
+      <div class="bar"><div id="socialBar"></div></div>
+    </div>
+  </div>
+
+  <button class="retake" onclick="location.href='index.html'">Retake Quiz</button>
+</section>
+
+<!-- LEADERBOARD -->
+<section class="leaderboard">
+  <h2>Trending Quizzes</h2>
+
+  <!-- Coffee Quiz -->
+  <div class="quiz-item">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+    <div>
+      <h4>Your Perfect Coffee Order</h4>
+      <span>6.1K plays</span>
+    </div>
+    <button onclick="location.href='quiz-coffee.html'">Play</button>
+  </div>
+
+  <!-- Party Personality Quiz -->
+  <div class="quiz-item highlight">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+    <div>
+      <h4>What's Your Party Personality?</h4>
+      <span>7.3K plays</span>
+    </div>
+    <button onclick="location.href='quiz-party.html'">Play</button>
+  </div>
+
+  <!-- Movie Character Quiz -->
+  <div class="quiz-item">
+    <img src="https://images.unsplash.com/photo-1606112219348-204d7d8b94ee">
+    <div>
+      <h4>Which Movie Character Are You?</h4>
+      <span>4.8K plays</span>
+    </div>
+    <button onclick="location.href='quiz-movie.html'">Play</button>
+  </div>
+
+</section>
+
+
+
+</section>
+
+<!-- ✅ JAVASCRIPT INSIDE HTML -->
+<script>
+  // Example result data
+  const result = {
+    name: "The Chill Vibe",
+    desc: "Relaxed, cool, and always in your zone. You go with the flow and bring calm energy wherever you go.",
+    chill: 95,
+    energy: 60,
+    social: 75
+  };
+
+  // Inject into page
+  document.getElementById("vibeName").innerText = result.name;
+  document.getElementById("vibeDesc").innerText = result.desc;
+
+  document.getElementById("chillVal").innerText = result.chill + "%";
+  document.getElementById("energyVal").innerText = result.energy + "%";
+  document.getElementById("socialVal").innerText = result.social + "%";
+
+  document.getElementById("chillBar").style.width = result.chill + "%";
+  document.getElementById("energyBar").style.width = result.energy + "%";
+  document.getElementById("socialBar").style.width = result.social + "%";
+</script>
+
+</body>
+</html>

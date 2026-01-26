@@ -122,7 +122,6 @@ const progressFill = document.querySelector(".fill");
 
 let current = 0;
 
-// Hide all except first
 questions.forEach((q, index) => {
     if (index !== 0) q.style.display = "none";
 });
@@ -144,7 +143,7 @@ nextButtons.forEach((btn, index) => {
             progressFill.style.width = percent + "%";
         } 
         else {
-            window.location.href = "result.html";
+            window.location.href = "result-coffee.html";
         }
     });
 });
